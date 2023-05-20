@@ -1,11 +1,12 @@
 export interface Manga {
   title: string;
   imageUrl: string;
-  author: string;
+  author: string[];
+  target: string;
   originalRun: string;
   publishedBy: string;
-  genre: string;
+  genre: string[];
   plot: string;
-  volumes: number;
+  volumes: number | string;
   isComplete: boolean;
 }
