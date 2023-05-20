@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataManagerService } from 'src/app/services/data-manager.service';
 
 @Component({
   selector: 'app-manga-list',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./manga-list.component.scss']
 })
 export class MangaListComponent {
+
+  constructor(public dataManagerServ: DataManagerService){
+    
+  }
 
 }

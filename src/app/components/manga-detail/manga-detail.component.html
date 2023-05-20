@@ -1,1 +1,17 @@
-<p>manga-detail works!</p>
+<div *ngIf="mangaDetail" class="card text-bg-dark mb-3" style="max-width: 750px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{mangaDetail.imageUrl}}" class="img-fluid rounded-start" alt="{{mangaDetail.title}}">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h2 class="card-title">{{mangaDetail.title}}</h2>
+        <p class="card-text">Autore: {{mangaDetail.author}}</p>
+        <p class="card-text">Categoria: {{mangaDetail.target}}</p>
+        <p class="card-text">Genere: {{mangaDetail.genre}}</p>
+        <p class="card-text">Volumi: {{mangaDetail.volumes}}</p>
+        <p class="card-text">Collezione completa: {{mangaDetail.isComplete}}</p>
+      </div>
+    </div>
+  </div>
+</div>

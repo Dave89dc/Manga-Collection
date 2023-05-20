@@ -1,1 +1,3 @@
-<p>manga-list works!</p>
+<div class="box-card">
+  <app-manga-detail *ngFor="let manga of dataManagerServ.manga" [mangaDetail]="manga"></app-manga-detail>
+</div>
