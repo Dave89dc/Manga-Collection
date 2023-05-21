@@ -1,23 +1,50 @@
-<div *ngIf="mangaDetail" class="card text-bg-dark mb-3" style="max-width: 1000px;">
+<div *ngIf="mangaDetail" class="card text-bg-dark mb-3" style="max-width: 1100px;">
   <div class="row g-0">
     <div class="col-md-4">
       <img style="height: 100%; width: 100%;" src="{{mangaDetail.imageUrl}}" class="img-fluid rounded-start" alt="{{mangaDetail.title}}">
     </div>
-    <div class="col-md-8">
+    <div style="display: flex; flex-direction: column;" class="col-md-8">
       <div class="card-body">
         <h2 class="card-title">{{mangaDetail.title}}</h2>
         <hr>
-        <p class="card-text">Autore: {{mangaDetail.author | separateElementsFromArray}}</p>
-        <p class="card-text">Categoria: {{mangaDetail.target}}</p>
-        <p class="card-text">Genere: {{mangaDetail.genre | separateElementsFromArray}}</p>
-        <p class="card-text">Data di pubblicazione: {{mangaDetail.originalRun}}</p>
-        <p class="card-text">Pubblicato da: {{mangaDetail.publishedBy}}</p>
-        <p class="card-text">Volumi: {{mangaDetail.volumes}}</p>
-        <p class="card-text">Collezione completa: {{mangaDetail.isComplete | collectionIfIsComplete}}</p>
+        <p class="card-text">AUTORE:  {{mangaDetail.author | separateElementsFromArray}}</p>
+        <p class="card-text">CATEGORIA:  {{mangaDetail.target}}</p>
+        <p class="card-text">GENERE:  {{mangaDetail.genre | separateElementsFromArray}}</p>
+        <p class="card-text">DATA DI PUBBLICAZIONE:  {{mangaDetail.originalRun}}</p>
+        <p class="card-text">PUBBLICATO DA:  {{mangaDetail.publishedBy}}</p>
+        <p class="card-text">VOLUMI:  {{mangaDetail.volumes}}</p>
+        <p class="card-text">COLLEZIONE COMPLETA:  {{mangaDetail.isComplete | collectionIfIsComplete}}</p>
       </div>
       <div class="box-btn">
-        <button type="button" class="btn btn-outline-light">Trama</button>
+        <ng-template #content let-c="close" let-d="dismiss">
+          <div style="background-color: #292b2c; color: white;" class="modal-header">
+            <h2 class="modal-title" id="modal-basic-title">{{mangaDetail.title}}</h2>
+          </div>
+          <div style="background-color: #292b2c; color: white; max-height: 500px; overflow-y: scroll;" class="modal-body">
+            <h3>Trama:</h3>
+            <p>{{mangaDetail.plot}}</p>
+          </div>
+          <div style="background-color: #292b2c; color: white;" class="modal-footer">
+            <button type="button" class="btn btn-outline-light" (click)="c('Save click')">Chiudi</button>
+          </div>
+        </ng-template>
+        <ng-template #content2 let-c="close" let-d="dismiss">
+          <div class="modal-header">
+            <h2 class="modal-title" id="modal-basic-title">Attenzione!</h2>
+          </div>
+          <div class="modal-body">
+            <p>Sei sicuro di voler eliminare "{{mangaDetail.title}}" dalla lista della Manga Collection?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Annulla</button>
+            <button type="button" class="btn btn-danger" (click)="deleteManga()" (click)="c('Save click')">Elimina</button>
+          </div>
+        </ng-template>
+        <button type="button" class="btn btn-outline-danger" (click)="open(content2)">Elimina</button>
+        <button style="margin-right: 5px;" class="btn btn-outline-light" (click)="open(content)">Trama</button>
       </div>
     </div>
   </div>
 </div>
+
+

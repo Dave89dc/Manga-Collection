@@ -1,1 +1,71 @@
-<p>manga-add works!</p>
+<ng-template #content let-c="close" let-d="dismiss">
+  <div style="background-color: #292b2c; color: white; display: flex; justify-content: center;" class="modal-header">
+    <h2 class="modal-title" id="modal-basic-title">Aggiungi un nuovo Manga:</h2>
+  </div>
+  <div style="background-color: #292b2c; color: white; overflow-y: scroll; max-height: 500px;" class="modal-body">
+    <form style="display: flex; flex-direction: column;" class="row g-3">
+      <div class="col-md-4">
+        <label for="validationDefault01" class="form-label">Titolo:</label>
+        <input type="text" class="form-control" id="validationDefault01" placeholder="Inserisci titolo" [(ngModel)]="newManga.title" required>
+      </div>
+      <div class="col-md-4">
+        <label for="validationDefault02" class="form-label">Immagine:</label>
+        <input type="text" class="form-control" id="validationDefault02" placeholder="Inserisci URL immagine" [(ngModel)]="newManga.imageUrl" required>
+      </div>
+      <div class="col-md-4">
+        <label for="validationDefault02" class="form-label">Autore, Autrice o Autori:</label>
+        <input type="text" class="form-control" id="validationDefault02" placeholder="Inserisci nome autore, autrice o autori" [(ngModel)]="newManga.author" required>
+      </div>
+      <div class="col-md-3">
+        <label for="validationDefault04" class="form-label">Categoria:</label>
+        <select style="cursor: pointer;" class="form-select" [(ngModel)]="newManga.target" required>
+          <option selected disabled value="Komodo">Seleziona categoria</option>
+          <option value="Komodo">Kodomo</option>
+          <option value="Shonen">Shonen</option>
+          <option value="Shojo">Shojo</option>
+          <option value="Seinen">Seinen</option>
+          <option value="Josei">Josei</option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <label for="validationDefault02" class="form-label">Data pubblicazione:</label>
+        <input type="text" class="form-control" id="validationDefault02" placeholder="Inserisci data oppure data(da-a)" [(ngModel)]="newManga.originalRun" required>
+      </div>
+      <div class="col-md-4">
+        <label for="validationDefault02" class="form-label">Pubblicato da:</label>
+        <input type="text" class="form-control" id="validationDefault02" placeholder="Inserisci casa editrice" [(ngModel)]="newManga.publishedBy" required>
+      </div>
+      <div class="col-md-4">
+        <label for="validationDefault02" class="form-label">Genere:</label>
+        <input type="text" class="form-control" id="validationDefault02" placeholder="Inserisci genere" [(ngModel)]="newManga.genre" required>
+      </div>
+      <span style="margin-bottom: 0px;">Trama:</span>
+      <div class="form-floating">
+        <textarea class="form-control" placeholder="Inserisci trama" id="floatingTextarea2" style="height: 100px" [(ngModel)]="newManga.plot"></textarea>
+        <label for="floatingTextarea2">Trama:</label>
+      </div>
+      <div class="col-md-4">
+        <label for="validationDefault02" class="form-label">Volumi:</label>
+        <input type="number" class="form-control" id="validationDefault02" placeholder="Seleziona numero" [(ngModel)]="newManga.volumes" required>
+      </div>
+      <div style="margin-bottom: 20px;" class="col-12">
+        <div class="form-check">
+          <input style="cursor: pointer;" class="form-check-input" type="checkbox" value="" id="invalidCheck2" [(ngModel)]="newManga.isComplete" required>
+          <label class="form-check-label" for="invalidCheck2">
+            Collezione completa
+          </label>
+        </div>
+      </div>
+      <div style="background-color: #292b2c; color: white;" class="modal-footer">
+        <button type="button" class="btn btn-outline-light" (click)="c('Save click')">Annulla</button>
+        <button type="submit" class="btn btn-light" (click)="saveManga()" (click)="c('Save click')">Salva</button>
+      </div>
+    </form>
+  </div>
+</ng-template>
+<button type="button" style="width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; position: fixed; bottom: 14px; right: 14px; border-radius: 30px;" class="btn btn-secondary btn-lg" (click)="open(content)">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+  </svg>
+</button>
+<!-- <button type="button" class="btn btn-outline-danger" (click)="open(content)">Elimina</button> -->

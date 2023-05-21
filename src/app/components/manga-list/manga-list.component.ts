@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { DataManagerService } from 'src/app/services/data-manager.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { DataManagerService } from 'src/app/services/data-manager.service';
 export class MangaListComponent {
 
   constructor(public dataManagerServ: DataManagerService){
-    
+
   }
 
 }

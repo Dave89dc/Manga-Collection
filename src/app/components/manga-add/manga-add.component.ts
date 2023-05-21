@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 import { Manga } from 'src/app/models/manga';
 import { DataManagerService } from 'src/app/services/data-manager.service';
 
@@ -10,22 +12,26 @@ import { DataManagerService } from 'src/app/services/data-manager.service';
 export class MangaAddComponent {
 
   newManga: Manga = {
-    title: 'Title',
-    imageUrl: 'Image',
-    author: ['Author'],
-    target: 'Category',
-    originalRun: 'Date',
-    publishedBy: 'Published by',
-    genre: ['Genre'],
-    plot: 'Plot',
+    title: '',
+    imageUrl: '',
+    author: [''],
+    target: '',
+    originalRun: '',
+    publishedBy: '',
+    genre: [''],
+    plot: '',
     volumes: 0,
     isComplete: false
   }
 
-  constructor(private dataManagerServ: DataManagerService){}
+  constructor(private dataManagerServ: DataManagerService, config: NgbModalConfig, private modalService: NgbModal){}
 
   saveManga(){
     this.dataManagerServ.addManga({...this.newManga});
+  }
+
+  open(content: any) {
+		this.modalService.open(content);
   }
 
 }
