@@ -567,6 +567,7 @@ export class DataManagerService {
   }
 
   addManga(newManga: Manga){
+    console.log(newManga)
     this.mangas.push(newManga);
   }
 
