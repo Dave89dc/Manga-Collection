@@ -10,6 +10,7 @@ import { MangaDetailComponent } from './components/manga-detail/manga-detail.com
 import { CollectionIfIsCompletePipe } from './pipes/collection-if-is-complete/collection-if-is-complete.pipe';
 import { SeparateElementsFromArrayPipe } from './pipes/separate-elements-from-array/separate-elements-from-array.pipe';
 import { MangaAddComponent } from './components/manga-add/manga-add.component';
+import { ReturnValuePipe } from './pipes/return-value/return-value.pipe';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { MangaAddComponent } from './components/manga-add/manga-add.component';
     MangaDetailComponent,
     CollectionIfIsCompletePipe,
     SeparateElementsFromArrayPipe,
-    MangaAddComponent
+    MangaAddComponent,
+    ReturnValuePipe
   ],
   imports: [
     BrowserModule,

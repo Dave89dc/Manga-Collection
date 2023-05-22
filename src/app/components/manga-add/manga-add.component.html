@@ -10,15 +10,15 @@
       </div>
       <div class="col-md-4">
         <label for="validationDefault02" class="form-label">Immagine:</label>
-        <input type="text" class="form-control" id="validationDefault02" placeholder="Inserisci URL immagine" [(ngModel)]="newManga.imageUrl" required>
+        <input name="imageUrl" type="text" class="form-control" id="validationDefault02" placeholder="Inserisci URL immagine" [(ngModel)]="newManga.imageUrl" required>
       </div>
       <div class="col-md-4">
         <label for="validationDefault02" class="form-label">Autore, Autrice o Autori:</label>
-        <input type="text" class="form-control" id="validationDefault02" placeholder="Inserisci nome autore, autrice o autori" [(ngModel)]="newManga.author" required>
+        <input name="author" type="text" class="form-control" id="validationDefault02" placeholder="Inserisci nome autore, autrice o autori" [(ngModel)]="newManga.author" required>
       </div>
       <div class="col-md-3">
         <label for="validationDefault04" class="form-label">Categoria:</label>
-        <select style="cursor: pointer;" class="form-select" [(ngModel)]="newManga.target" required>
+        <select name="target" style="cursor: pointer;" class="form-select" [(ngModel)]="newManga.target" required>
           <option selected disabled value="Komodo">Seleziona categoria</option>
           <option value="Komodo">Kodomo</option>
           <option value="Shonen">Shonen</option>
@@ -29,28 +29,28 @@
       </div>
       <div class="col-md-4">
         <label for="validationDefault02" class="form-label">Data pubblicazione:</label>
-        <input type="text" class="form-control" id="validationDefault02" placeholder="Inserisci data oppure data(da-a)" [(ngModel)]="newManga.originalRun" required>
+        <input name="originalRun" type="text" class="form-control" id="validationDefault02" placeholder="Inserisci data oppure data(da-a)" [(ngModel)]="newManga.originalRun" required>
       </div>
       <div class="col-md-4">
         <label for="validationDefault02" class="form-label">Pubblicato da:</label>
-        <input type="text" class="form-control" id="validationDefault02" placeholder="Inserisci casa editrice" [(ngModel)]="newManga.publishedBy" required>
+        <input name="publishedBy" type="text" class="form-control" id="validationDefault02" placeholder="Inserisci casa editrice" [(ngModel)]="newManga.publishedBy" required>
       </div>
       <div class="col-md-4">
         <label for="validationDefault02" class="form-label">Genere:</label>
-        <input type="text" class="form-control" id="validationDefault02" placeholder="Inserisci genere" [(ngModel)]="newManga.genre" required>
+        <input name="genre" type="text" class="form-control" id="validationDefault02" placeholder="Inserisci genere" [(ngModel)]="newManga.genre" required>
       </div>
       <span style="margin-bottom: 0px;">Trama:</span>
       <div class="form-floating">
-        <textarea class="form-control" placeholder="Inserisci trama" id="floatingTextarea2" style="height: 100px" [(ngModel)]="newManga.plot"></textarea>
+        <textarea name="plot" class="form-control" placeholder="Inserisci trama" id="floatingTextarea2" style="height: 100px" [(ngModel)]="newManga.plot"></textarea>
         <label for="floatingTextarea2">Trama:</label>
       </div>
       <div class="col-md-4">
         <label for="validationDefault02" class="form-label">Volumi:</label>
-        <input type="number" class="form-control" id="validationDefault02" placeholder="Seleziona numero" [(ngModel)]="newManga.volumes" required>
+        <input name="volumes" type="number" class="form-control" id="validationDefault02" placeholder="Seleziona numero" [(ngModel)]="newManga.volumes" required>
       </div>
       <div style="margin-bottom: 20px;" class="col-12">
         <div class="form-check">
-          <input style="cursor: pointer;" class="form-check-input" type="checkbox" value="" id="invalidCheck2" [(ngModel)]="newManga.isComplete" required>
+          <input name="isComplete" style="cursor: pointer;" class="form-check-input" type="checkbox" value="" id="invalidCheck2" [(ngModel)]="newManga.isComplete" required>
           <label class="form-check-label" for="invalidCheck2">
             Collezione completa
           </label>
