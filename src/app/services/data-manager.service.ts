@@ -188,7 +188,7 @@ export class DataManagerService {
         publishedBy: 'Star Comics',
         genre: ['Avventura', 'Fantascienza'],
         plot: "In un Giappone minacciato dai kaiju, mostri mortali che il mondo è costretto a fronteggiare, Hibino Kafka è un trentaduenne con il sogno di entrare nella Japan Defense Force, un'organizzazione militare incaricata di neutralizzare i kaiju. Si pone un problema, Hibino si trasforma improvvisamente in un kaiju venendo riconosciuto dalla Japan Defence Force come nemico e identificato con il nome in codice Kaiju No. 8.",
-        volumes: 7,
+        volumes: 8,
         isComplete: false
       },
       {
@@ -380,7 +380,7 @@ export class DataManagerService {
         publishedBy: 'J-Pop',
         genre: ['Commedia romantica', 'Soprannaturale'],
         plot: "Ko Yamori è incapace di dormire e di trovare soddisfazione nella sua vita quotidiana, per questo smette di andare a scuola e inizia a vagare senza meta di notte per le strade della città. Una sera incontra Nazuna Nanakusa, una strana ragazza un po' più grande di lui, che si rivela una vampira e che mostra a Ko le gioie di camminare nella notte. A quel punto anche Ko vuole diventare un vampiro, ma per raggiungere il suo obiettivo deve prima innamorarsi di Nazuna.",
-        volumes: 7,
+        volumes: 8,
         isComplete: false
       },
       {
@@ -404,7 +404,7 @@ export class DataManagerService {
         publishedBy: 'J-Pop',
         genre: ['Commedia', 'Sentimentale', 'Slice of life'],
         plot: "Gli studenti Ganta Nakami e Isaki Magari soffrono di insonnia e un giorno si incontrano per caso nel vecchio osservatorio della loro scuola. Dal momento che quella stanza è inutilizzata da anni e tutti gli studenti se ne tengono alla larga credendola infestata dai fantasmi, i due ragazzi decidono di usarla come il loro rifugio segreto in cui ritrovarsi e recuperare qualche minuto di sonno.",
-        volumes: 3,
+        volumes: 4,
         isComplete: false
       },
       {
@@ -416,8 +416,8 @@ export class DataManagerService {
         publishedBy: 'J-Pop',
         genre: ['Commedia romantica', 'Supereroi'],
         plot: "Per combattere la malvagia Società Segreta Gekko che mira alla conquista del mondo, viene formato il gruppo di cinque eroi Freezing Sentai Gelato 5. Il gruppo è composto dal capitano Fudō Aikawa (Red Gelato), Hayato Ōjino (Blue Gelato), Misaki Jingūji (gelato giallo), Daigo Todoroki (gelato verde), Haru Arisugawa (gelato rosa) e supervisionati dal professor Big Gelato, loro leader. La guerra diventa più complicata per gli eroi quando Gekko recluta come nuovo membro la \"Principessa Mietitrice\" Desumi Magahara, una combattente formidabile che prende il ruolo di uno dei sei comandanti dell'organizzazione. Fudō si innamora subito di Desumi e dopo essersi dichiarato la convince ad iniziare una relazione, nonostante siano nemici mortali. Nonostante entrambi siano privi di alcuna esperienza in campo sentimentale, iniziano a frequentarsi in segreto, tenendo nascosta la loro relazione alle rispettive organizzazioni.",
-        volumes: 5,
-        isComplete: false
+        volumes: 6,
+        isComplete: true
       },
       {
         title: "Peep Hole",
@@ -440,7 +440,7 @@ export class DataManagerService {
         publishedBy: 'Planet Manga',
         genre: ['Azione', 'Commedia', 'Supereroi'],
         plot: "Dopo tre anni di allenamento, un ragazzo venticinquenne di nome Saitama ha raggiunto il suo obiettivo: essere un eroe talmente forte da poter sconfiggere chiunque con un solo pugno. Tuttavia, essere diventato così potente ha reso talmente facile il ruolo di eroe a Saitama da renderlo perennemente annoiato e portarlo alla depressione. In seguito alla conoscenza del cyborg Genos (che diventerà suo allievo), Saitama entrerà a far parte dell'Associazione Eroi, un'organizzazione che riunisce gli eroi della Terra con lo scopo di combattere criminali, mostri e disastri vari. Il nuovo obiettivo di Saitama diventa quello di scalare le classifiche dell'associazione e diventare uno degli eroi più popolari.",
-        volumes: 26,
+        volumes: 27,
         isComplete: false
       },
       {
@@ -464,7 +464,7 @@ export class DataManagerService {
         publishedBy: 'J-Pop',
         genre: ['Azione', 'Commedia romantica', 'Horror', 'Soprannaturale', 'Thriller'],
         plot: "Momo Ayase è una liceale convinta che gli spiriti esistano e non siano solo frutto del folklore popolare; il suo compagno di scuola Ken Takakura crede invece nell'esistenza degli alieni. Un giorno Momo vede Ken preso di mira dai bulli a causa delle sue credenze e decide quindi di aiutarlo. I due si confidano così le rispettive ossessioni sovrannaturali ma nessuno crede all'altro, perciò decidono di fare una scommessa per dimostrare chi dei due abbia ragione: Momo andrà a visitare un ospedale abbandonato, luogo dove dovrebbero apparire degli alieni, mentre Ken andrà a visitare una vecchia galleria dove a detta di Momo dovrebbero comparire gli spiriti. Raggiunti i due luoghi designati, i ragazzi scopriranno che entrambi avevano ragione e che sia alieni che spiriti esistono, ritrovandosi invischiati in una disputa di proporzioni planetarie tra le fazioni dell'occulto.",
-        volumes: 5,
+        volumes: 6,
         isComplete: false
       },
       {
