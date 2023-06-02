@@ -1,3 +1,41 @@
-<div class="box-card">
-  <app-manga-detail *ngFor="let manga of dataManagerServ.mangas" [mangaDetail]="manga"></app-manga-detail>
+<div class="filter-box">
+  <div>
+    <span class="filter-text">Filtra per:</span>
+  </div>
+  <div class="select-box">
+    <div class="select">
+      <span class="filter-span"><b>Genere: </b></span>
+      <select class="genre-select" [(ngModel)]="genereSelezionato" (change)="filtra()">
+        <option value="">Seleziona un genere</option>
+        <option *ngFor="let genre of generi" [value]="genre">{{genre}}</option>
+      </select>
+    </div>
+    <div class="select">
+      <span class="filter-span"><b>Categoria: </b></span>
+      <select class="category-select" [(ngModel)]="categoriaSelezionata" (change)="filtra()">
+        <option value="">Seleziona una categoria</option>
+        <option *ngFor="let category of categorie" [value]="category">{{category}}</option>
+      </select>
+    </div>
+    <div class="select">
+      <span class="filter-span"><b>Autore: </b></span>
+      <select class="author-select" [(ngModel)]="autoreSelezionato" (change)="filtra()">
+        <option value="">Seleziona un autore</option>
+        <option *ngFor="let author of autori" [value]="author">{{author}}</option>
+      </select>
+    </div>
+  </div>
 </div>
+<div class="box-card" *ngIf="mangaVisualizzati.length > 0; else noResults">
+  <app-manga-detail *ngFor="let manga of mangaVisualizzati.slice((page - 1) * itemsPerPage, page * itemsPerPage)" [mangaDetail]="manga"></app-manga-detail>
+  <ngb-pagination class="d-flex justify-content-center" style="margin-top: 60px;" [collectionSize]="mangaVisualizzati.length" [pageSize]="10" [(page)]="page" aria-label="Default pagination"></ngb-pagination>
+</div>
+<ng-template #noResults>
+  <div class="no-results">
+    <p class="no-result-text">"Nessun risultato trovato."</p>
+  </div>
+</ng-template>
+
+
+
+

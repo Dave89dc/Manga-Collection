@@ -7,9 +7,12 @@
   box-sizing: border-box;
 }
 
-html, body {
+body {
+  overflow-x: hidden;
   padding: 0px;
-  padding-bottom: 40px;
   margin: 0px;
   background-color: var(--bs-light);
 }
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
