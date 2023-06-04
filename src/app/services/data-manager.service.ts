@@ -573,6 +573,7 @@ export class DataManagerService {
 
   deleteManga(mangaToDelete: Manga){
     this.mangas = this.mangas.filter(elements => elements.title !== mangaToDelete.title);
+    
   }
 
 }

@@ -14,11 +14,11 @@ export class MangaAddComponent {
   newManga: Manga = {
     title: '',
     imageUrl: '',
-    author: [''],
+    author: [],
     target: '',
     originalRun: '',
     publishedBy: '',
-    genre: [''],
+    genre: [],
     plot: '',
     volumes: 0,
     isComplete: false

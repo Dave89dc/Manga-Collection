@@ -33,7 +33,9 @@ export class MangaDetailComponent {
   deleteManga(){
     if(this.mangaDetail){
       this.dataManagerServ.deleteManga(this.mangaDetail);
+      console.log(this.mangaDetail);
     }
+    this.modalService.dismissAll();
   }
 
   open(content: any) {
