@@ -10,8 +10,6 @@ import { DataManagerService } from 'src/app/services/data-manager.service';
 })
 export class MangaListComponent implements OnInit {
 
-  mangaToDelete?: Manga;
-
   page = 1;
   itemsPerPage = 10;
   generi: string[] = [];
@@ -83,19 +81,5 @@ export class MangaListComponent implements OnInit {
 
     this.page = 1;
   }
-
-  deleteManga(manga: Manga): void {
-    if (manga) {
-      this.dataManagerServ.deleteManga(manga);
-      this.refreshMangaList();
-    }
-  }
-
-  refreshMangaList(): void {
-    this.mangaVisualizzati = this.mangaVisualizzati.filter(
-      (manga) => manga.title !== this.mangaToDelete?.title
-    );
-  }
-
 
 }
