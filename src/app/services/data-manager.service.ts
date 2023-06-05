@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 
 import { Manga } from '../models/manga';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataManagerService {
+
+  deleteMangaSubject: Subject<Manga> = new Subject<Manga>();
 
   mangas: Manga[];
 
@@ -562,7 +565,7 @@ export class DataManagerService {
         plot: "Yota Moteuchi è uno studente liceale di 16 anni che, a causa di una enorme timidezza e di una gran dose di sfortuna, ha difficoltà a rapportarsi con l'altro sesso, venendo così soprannominato da tutti \"Motenai Yoda\", ossia \"senza donne\" (un gioco di parole ottenuto leggendo diversamente gli ideogrammi del suo nome). Il nostro impacciato protagonista è follemente innamorato della sua bella compagna di classe Moemi Hayakawa, ma non riesce mai a cogliere il momento opportuno per confidarle il suo amore. Dopo essere riuscito a diventare suo amico, Yota decide di confidare i suoi sentimenti alla ragazza, ma prima di riuscirvi scopre che Moemi in realtà prova una grande attrazione per Takashi Niimai, il suo migliore amico. Allora Yota, dimostrando un incredibile altruismo, decide di non dichiararsi e, addirittura, di aiutare Moemi a conquistare Takashi. Quest'ultimo però è a conoscenza dei sentimenti che prova Yota per Moemi e per questo sceglie di respingere la ragazza, pensando di fare così un favore al suo amico. Rincasando, Yota si imbatte in uno strano video noleggio, il Gokuraku Club (letteralmente il \"Club Paradiso\"). Incuriosito, vi entra e qui viene subito colpito da un video dal titolo \"Io ti consolerò - Ai Amano\". Convinto che la cassetta sia in realtà un video hard, il giovane decide di portarselo a casa. Ma una grande sorpresa lo aspetta! Infatti, mentre cerca di riprodurre la cassetta con il suo videoregistratore difettoso, il giovane viene investito da un enorme bagliore e scopre con sommo stupore che Ai è comparsa in carne e ossa al suo fianco. Aver riprodotto la cassetta nel videoregistratore rotto ha causato qualche piccolo inconveniente, il carattere e le \"curve\" di Ai risultano cambiati e non si rivelerà affatto tenera e servizievole come previsto, ma un vero e proprio tornado.",
         volumes: 20,
         isComplete: true
-      },
+      }
     ]
   }
 
@@ -571,9 +574,13 @@ export class DataManagerService {
     this.mangas.push(newManga);
   }
 
-  deleteManga(mangaToDelete: Manga){
-    this.mangas = this.mangas.filter(elements => elements.title !== mangaToDelete.title);
-    
+  // deleteManga(mangaToDelete: Manga) {
+  //   this.mangas = this.mangas.filter(manga => manga.title !== mangaToDelete.title);
+  // }
+
+  deleteManga(manga: Manga): void {
+    this.mangas = this.mangas.filter((m) => m.title !== manga.title);
+    this.deleteMangaSubject.next(manga);
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Manga } from 'src/app/models/manga';
 
 import { DataManagerService } from 'src/app/services/data-manager.service';
@@ -8,7 +8,9 @@ import { DataManagerService } from 'src/app/services/data-manager.service';
   templateUrl: './manga-list.component.html',
   styleUrls: ['./manga-list.component.scss']
 })
-export class MangaListComponent {
+export class MangaListComponent implements OnInit {
+
+  mangaToDelete?: Manga;
 
   page = 1;
   itemsPerPage = 10;
@@ -24,6 +26,10 @@ export class MangaListComponent {
     this.generi = this.getUniqueGenres();
     this.categorie = this.getUniqueCategories();
     this.autori = this.getUniqueAuthors();
+    this.mangaVisualizzati = this.dataManagerServ.mangas;
+  }
+
+  ngOnInit() {
     this.mangaVisualizzati = this.dataManagerServ.mangas;
   }
 
@@ -76,6 +82,19 @@ export class MangaListComponent {
     });
 
     this.page = 1;
+  }
+
+  deleteManga(manga: Manga): void {
+    if (manga) {
+      this.dataManagerServ.deleteManga(manga);
+      this.refreshMangaList();
+    }
+  }
+
+  refreshMangaList(): void {
+    this.mangaVisualizzati = this.mangaVisualizzati.filter(
+      (manga) => manga.title !== this.mangaToDelete?.title
+    );
   }
 
 
