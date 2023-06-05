@@ -24,7 +24,6 @@ export class MangaListComponent implements OnInit {
     this.generi = this.getUniqueGenres();
     this.categorie = this.getUniqueCategories();
     this.autori = this.getUniqueAuthors();
-    this.mangaVisualizzati = this.dataManagerServ.mangas;
   }
 
   ngOnInit() {

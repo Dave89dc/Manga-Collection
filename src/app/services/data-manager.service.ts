@@ -1,14 +1,11 @@
 import { Injectable } from '@angular/core';
 
 import { Manga } from '../models/manga';
-import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataManagerService {
-
-  deleteMangaSubject: Subject<Manga> = new Subject<Manga>();
 
   mangas: Manga[];
 
@@ -578,9 +575,8 @@ export class DataManagerService {
   //   this.mangas = this.mangas.filter(manga => manga.title !== mangaToDelete.title);
   // }
 
-  deleteManga(manga: Manga): void {
+  deleteManga(manga: Manga){
     this.mangas = this.mangas.filter((m) => m.title !== manga.title);
-    this.deleteMangaSubject.next(manga);
   }
 
 }
