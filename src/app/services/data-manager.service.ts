@@ -1,16 +1,20 @@
 import { Injectable } from '@angular/core';
 
 import { Manga } from '../models/manga';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataManagerService {
 
-  mangas: Manga[];
+//mangas: Manga[];
+
+  mangaSubject: BehaviorSubject<Manga[]>;
 
   constructor() {
-    this.mangas = [
+
+    const mangas: Manga[] = [
       {
         title: 'Goblin Slayer',
         imageUrl: './assets/Goblin-Slayer.jpg',
@@ -563,12 +567,15 @@ export class DataManagerService {
         volumes: 20,
         isComplete: true
       }
-    ]
+    ];
+
+    this.mangaSubject = new BehaviorSubject(mangas);
   }
 
   addManga(newManga: Manga){
-    console.log(newManga)
-    this.mangas.push(newManga);
+    const oldMangas = this.mangaSubject.value;
+    oldMangas.push(newManga);
+    this.mangaSubject.next(oldMangas);
   }
 
   // deleteManga(mangaToDelete: Manga) {
@@ -576,7 +583,9 @@ export class DataManagerService {
   // }
 
   deleteManga(manga: Manga){
-    this.mangas = this.mangas.filter((m) => m.title !== manga.title);
+    const oldMangas = this.mangaSubject.value;
+    const newMangas = oldMangas.filter((m) => m.title !== manga.title);
+    this.mangaSubject.next(newMangas);
   }
 
 }
